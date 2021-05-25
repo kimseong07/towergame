@@ -102,6 +102,10 @@ private:
 
 	int result;
 	int ch;
+	
+	int i;
+	int j;
+	int k;
 public:
 	int getGrade();
 	void keyInput();
@@ -193,22 +197,30 @@ void Random::keyInput()
 
 void Random::drawMap()
 {
+	i = rand() % 15 + 1;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|     LEFT      |" << "             " << "|     RIGHT     |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
 	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "        ◁       " << "             " << "         ▷      " << endl;
-	int i = rand() % 255;
-	gotoXY(22, 11);
+	cout << endl;
+	cout << endl;
+	cout << endl;
 	setColor(i);
+	cout << "        ◁       ";
+	k = rand() % 15 + 1;
+	setColor(k);
+	j = rand() % 15 + 1;
+	cout << "             " << "         ▷      " << endl;
+	gotoXY(22, 11);
+	setColor(j);
 	cout << result + 1 << "층" << endl;
 }
 ```
