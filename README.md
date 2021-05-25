@@ -23,22 +23,24 @@ void drawMap()
 
 int main()
 {
-    srand((unsigned)time(NULL));
+	srand((unsigned)time(NULL));
 
 	SetConsoleView();
 
-    Random* rand = new Random();
+	Random* rando = new Random();
+
 	while (true)
 	{
-		setColor(11);
+		int i = rand() % 15;
+
+		setColor(i);
 		drawMap();
+		gotoXY(49, 19);
 
-		rand->keyInput();
-
-		clrscr();
+		rando->keyInput();
 	}
 
-    return 0;
+	return 0;
 }
 ```
 ### console.h
@@ -120,7 +122,6 @@ private:
 public:
 	int getGrade();
 	void keyInput();
-	void place();
 };
 ```
 ###### random.cpp
@@ -201,9 +202,7 @@ void Random::keyInput()
 			exit(0);
 		}
 	}
-}
-void Random::place()
-{
+	
 	gotoXY(22, 11);
 	cout << result + 1 << "층" << endl;
 }
