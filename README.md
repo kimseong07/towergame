@@ -3,24 +3,6 @@
 ```
 #include "Random.h"
 
-void drawMap()
-{
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "|               |" << "             " << "|               |" << endl;
-	cout << "        <        " << "             " << "         >       " << endl;
-
-}
-
 int main()
 {
 	srand((unsigned)time(NULL));
@@ -33,8 +15,9 @@ int main()
 	{
 		int i = rand() % 15;
 
+		gotoXY(0, 0);
 		setColor(i);
-		drawMap();
+		rando->drawMap();
 		gotoXY(49, 19);
 
 		rando->keyInput();
@@ -122,6 +105,7 @@ private:
 public:
 	int getGrade();
 	void keyInput();
+	void drawMap();
 };
 ```
 ###### random.cpp
@@ -204,6 +188,27 @@ void Random::keyInput()
 	}
 	
 	gotoXY(22, 11);
+	cout << result + 1 << "층" << endl;
+}
+
+void Random::drawMap()
+{
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "|               |" << "             " << "|               |" << endl;
+	cout << "        ◁       " << "             " << "         ▷      " << endl;
+	int i = rand() % 255;
+	gotoXY(22, 11);
+	setColor(i);
 	cout << result + 1 << "층" << endl;
 }
 ```
